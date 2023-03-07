@@ -41,6 +41,7 @@ class AstPrinter implements Expr.Visitor<String> {
     }
 
     public static void main(String[] args) {
+        // -123 * (45.7) -> (* (- 123) (group 45.7))
         Expr expression = new Expr.Binary(
                 new Expr.Unary(
                         new Token(TokenType.MINUS, "-", null, 1),
